@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1334232773",
+    "project_id": "notesapp-f1838",
+    "storage_bucket": "notesapp-f1838.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1334232773:android:b853225c08c9ae32d0d2ac",
+        "android_client_info": {
+          "package_name": "com.ldobluis.notesapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzJIG2R9Qf4AQdVKK3IxtoN1w4uEIqgPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
