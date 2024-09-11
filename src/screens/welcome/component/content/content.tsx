@@ -1,4 +1,5 @@
-import {Vcontainer, Text} from '@/component';
+import React from 'react';
+import {Text} from '@/component';
 const contentScreen = (props: {title: string; subtitle: string}) => {
   const {title, subtitle} = props;
   return (

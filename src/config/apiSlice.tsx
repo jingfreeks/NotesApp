@@ -1,5 +1,5 @@
 
-import {setCredentials, setLogout} from '@/slice/auth';
+import {setCredentials, setLogout} from '../slice/auth';
 import Config from 'react-native-config';
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 
