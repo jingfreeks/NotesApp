@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import {ListItem} from './component';
 import {NotesList} from './constant';
 
@@ -8,8 +8,7 @@ const Home = () => {
     return <ListItem title={item.title} body={item.body} date={item.date} />;
   };
   return (
-    <View>
-      <Text>home</Text>
+    <View style={{marginLeft:10,marginRight:10,backgroundColor:'#ffff'}}>  
       <FlatList
         data={NotesList}
         renderItem={renderItem}
