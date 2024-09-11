@@ -5,7 +5,7 @@ import {
   useNavigationContainerRef,
 } from '@react-navigation/native';
 import {AuthNavigation} from '@/navigation/authnavigation';
-import {Appnavigation} from '@/navigation/appnavigation';
+import {Appnavigation} from './appnavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {State} from '@/config/types';
 import type {RootNavigationProps,AppNavigationProps} from './types';
@@ -20,20 +20,20 @@ const RootNavigationScreen = () => {
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
-        initialRouteName={token ? Navigation.app : Navigation.auth}
+        initialRouteName={token ? Navigation.App : Navigation.Auth}
         screenOptions={{
           headerBackTitleVisible: false,
         }}>
         {token ? (
           <Stack.Screen
             component={Appnavigation}
-            name={Navigation.app}
+            name={Navigation.App}
             options={{headerShown: false}}
           />
         ) : (
           <Stack.Screen
             component={AuthNavigation}
-            name={Navigation.auth}
+            name={Navigation.Auth}
             options={{headerShown: false}}
           />
         )}

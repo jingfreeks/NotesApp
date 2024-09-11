@@ -1,11 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {ImageHeaderStyled, HeaderLeftStyled} from './styles';
-import {HomeIcon, HamburgerIcon} from '@/assets';
 import {Home, Maps} from '@/screens';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import type {AppNavigationProps, RootNavigationProps} from './types';
+import {Navigation} from './constant';
+import type {RootNavigationProps,AppNavigationProps} from './types';
 import {colors} from '@/utils/themes';
-const Tab = createBottomTabNavigator<RootNavigationProps>();
+const Tab = createBottomTabNavigator<RootNavigationProps&AppNavigationProps>();
 
 const BottomTabScreen = () => {
   return (
@@ -17,50 +16,25 @@ const BottomTabScreen = () => {
       }}>
       <Tab.Screen
         component={Home}
-        name="Home"
+        name={Navigation.Home}
         options={{
           tabBarLabel: 'Home',
-          // eslint-disable-next-line react/no-unstable-nested-components
           tabBarIcon: () => (
-            <ImageHeaderStyled resizeMode={'contain'} source={HomeIcon} />
-          ),
-          // eslint-disable-next-line react/no-unstable-nested-components
-          headerLeft: () => (
-            <HeaderLeftStyled>
-              <ImageHeaderStyled
-                resizeMode={'contain'}
-                size={25}
-                source={HamburgerIcon}
-              />
-            </HeaderLeftStyled>
+            <FontAwesome color={colors.gray} name={'home'} size={25} />
           ),
         }}
       />
       <Tab.Screen
         component={Maps}
-        name="TimeCard1"
+        name={Navigation.Map}
         options={{
-          tabBarLabel: 'Profile',
-          title: 'Profile',
-          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarLabel: 'Map',
+          title: 'Map',
           tabBarIcon: () => (
-            <FontAwesome color={colors.gray} name={'user-o'} size={25} />
+            <FontAwesome color={colors.gray} name={'map-marker'} size={25} />
           ),
         }}
       />
-      <Tab.Screen
-        component={Profile}
-        name="TimeCard1"
-        options={{
-          tabBarLabel: 'Profile',
-          title: 'Profile',
-          // eslint-disable-next-line react/no-unstable-nested-components
-          tabBarIcon: () => (
-            <FontAwesome color={colors.gray} name={'user-o'} size={25} />
-          ),
-        }}
-      />
-      {/* <Tab.Screen name="Settings" component={SettingsScreen} /> */}
     </Tab.Navigator>
   );
 };

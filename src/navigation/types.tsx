@@ -1,15 +1,16 @@
 export type RootNavigationProps = {
-  BottomTab: undefined;
-  app: undefined;
+  BottomTab: AppNavigationProps;
+  App: undefined;
   Login: undefined;
   Signup: undefined;
   Welcome: undefined;
-  auth: undefined;
+  Auth: undefined;
   Home:undefined;
+  Map:undefined
 };
 
 
 export type AppNavigationProps = {
-  Home:undefined;
-  Maps:undefined;
+  Home:string;
+  Maps:string;
 };
