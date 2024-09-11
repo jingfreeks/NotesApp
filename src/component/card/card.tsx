@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
-
-const card = () => {
+import {ContainerStyled} from './styles'
+const card = (props:{children:React.ReactNode}) => {
+  const {children}=props
   return (
-    <View>
-      <Text>card</Text>
-    </View>
+    <ContainerStyled> 
+      {children}
+    </ContainerStyled>
   )
 }
 

@@ -7,7 +7,7 @@ export const NotesList = [
   },
   {
     title: 'Notes 2',
-    body: 'The quick brown fox Jumps Over the Lazy Dog',
+    body: 'The quick brown fox Jumps Over the Lazy Dog  The quick brown fox Jumps Over the Lazy Dog',
     date: '09-01-2024',
     id:2,
   },
