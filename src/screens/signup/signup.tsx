@@ -1,11 +1,26 @@
-import { View, Text } from 'react-native'
-
-const signup = () => {
+import {
+  View,
+  Text,
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
+import {verticalScale} from 'react-native-size-matters';
+import {ContainerStyled, KeyboardContainerStyled} from './styles';
+import {Form, Header} from './component';
+const Signup = () => {
   return (
-    <View>
-      <Text>signup</Text>
-    </View>
-  )
-}
+    <KeyboardContainerStyled
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={verticalScale(100)}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <ContainerStyled>
+          <Header />
+          <Form />
+        </ContainerStyled>
+      </TouchableWithoutFeedback>
+    </KeyboardContainerStyled>
+  );
+};
 
-export default signup
+export default Signup;
