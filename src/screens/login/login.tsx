@@ -1,11 +1,34 @@
-import { View, Text } from 'react-native'
+import React from 'react';
+import {Platform, TouchableWithoutFeedback, Keyboard, Text} from 'react-native';
+import {Button} from '@/component';
+import {verticalScale} from 'react-native-size-matters';
+import {
+  ContainerStyled,
+  KeyboardContainerStyled,
+  ButtonContainer,
+} from './styles';
+import {Form, Header} from './component';
+import {useSignupHooks} from './hooks';
 
-const login = () => {
+const Login = () => {
+  const {handleLogin}=useSignupHooks()
   return (
-    <View>
-      <Text>login</Text>
-    </View>
-  )
-}
+    <KeyboardContainerStyled
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={verticalScale(100)}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <ContainerStyled>
+          <Header />
+          <Form />
+          <ButtonContainer>
+            <Button bcolor="transparent" border={1} onPress={handleLogin}>
+              <Text>Login</Text>
+            </Button>
+          </ButtonContainer>
+        </ContainerStyled>
+      </TouchableWithoutFeedback>
+    </KeyboardContainerStyled>
+  );
+};
 
-export default login
+export default Login;

@@ -1,3 +1,4 @@
+import React from 'react'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Maps} from '@/screens';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
