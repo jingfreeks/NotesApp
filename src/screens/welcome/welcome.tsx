@@ -1,3 +1,4 @@
+import React from 'react';
 import {Button, Text, Vcontainer} from '@/component';
 import {Content} from './component/content';
 import {FooterContainer, ButtonContainer,Separator} from './styles';

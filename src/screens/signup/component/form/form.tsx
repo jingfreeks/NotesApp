@@ -1,5 +1,6 @@
+import React from 'react'
 import {View, Text} from 'react-native';
-import {Button, Vcontainer} from '@/component';
+import {Button, Vcontainer,FormTextController} from '@/component';
 import {
   ContainerStyled,
   ScrollViewContainer,
@@ -35,7 +36,14 @@ const form = () => {
       <FormProvider {...formMethod}>
         <ScrollViewContainer>
           <TextInputContainerStyled>
-            <Text>form</Text>
+          <FormTextController
+              Label="Email"
+              name="email"
+              placeholder="Email"
+              rules={{
+                required: true,
+              }}
+            />
           </TextInputContainerStyled>
         </ScrollViewContainer>
       </FormProvider>

@@ -4,7 +4,7 @@ import {
   NavigationContainer,
   useNavigationContainerRef,
 } from '@react-navigation/native';
-import {AuthNavigation} from '@/navigation/authnavigation';
+import {AuthNavigation} from './authnavigation';
 import {Appnavigation} from './appnavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {State} from '@/config/types';

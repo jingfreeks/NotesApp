@@ -1,5 +1,5 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json",
+  // "extends": "@tsconfig/react-native/tsconfig.json",
   "compilerOptions": {
     "jsx": "react-jsx",
     "target": "ESNext",
@@ -8,7 +8,7 @@
     "sourceMap": true,
     "checkJs":true,
     "moduleResolution": "node",
-    "baseUrl": "./",
+    "baseUrl": ".",
     "types": [
       "jest",
       // "cypress",

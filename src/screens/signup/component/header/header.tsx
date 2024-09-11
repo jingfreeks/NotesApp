@@ -1,12 +1,14 @@
-import { View} from 'react-native'
-import {Button, Text, Vcontainer} from '@/component';
+
 import React from 'react'
+import {Text} from '@/component';
+import {ContainerStyled} from './styles'
+
 
 const header = () => {
   return (
-    <Vcontainer alignType="center" justify="center">
+    <ContainerStyled>
       <Text TextMode="TextH1Title">SIGN UP FORM</Text>
-    </Vcontainer>
+    </ContainerStyled>
   )
 }
 

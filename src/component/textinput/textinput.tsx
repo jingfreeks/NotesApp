@@ -1,4 +1,4 @@
-// @ts-check
+import React from 'react'
 import {useState, ReactElement} from 'react';
 import {Text} from '../text';
 import IconIonic from 'react-native-vector-icons/Ionicons';
