@@ -1,16 +1,9 @@
-import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {ImageHeaderStyled, HeaderLeftStyled} from './styles';
-import {
-  HomeIcon,
-  MyjobsIcon,
-  SearchIcon,
-  TimecardIcon,
-  HamburgerIcon,
-} from '@/assets';
-import {HomeScreen, Pcities, MyJobs,Profile} from '@/screens';
+import {HomeIcon, HamburgerIcon} from '@/assets';
+import {Home, Maps} from '@/screens';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import type {AppNavigationProps,RootNavigationProps} from './types';
+import type {AppNavigationProps, RootNavigationProps} from './types';
 import {colors} from '@/utils/themes';
 const Tab = createBottomTabNavigator<RootNavigationProps>();
 
@@ -23,7 +16,7 @@ const BottomTabScreen = () => {
         tabBarInactiveTintColor: colors.black,
       }}>
       <Tab.Screen
-        component={HomeScreen}
+        component={Home}
         name="Home"
         options={{
           tabBarLabel: 'Home',
@@ -40,6 +33,18 @@ const BottomTabScreen = () => {
                 source={HamburgerIcon}
               />
             </HeaderLeftStyled>
+          ),
+        }}
+      />
+      <Tab.Screen
+        component={Maps}
+        name="TimeCard1"
+        options={{
+          tabBarLabel: 'Profile',
+          title: 'Profile',
+          // eslint-disable-next-line react/no-unstable-nested-components
+          tabBarIcon: () => (
+            <FontAwesome color={colors.gray} name={'user-o'} size={25} />
           ),
         }}
       />
