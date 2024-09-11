@@ -1,11 +1,18 @@
-import { View, Text } from 'react-native'
+import React from 'react';
 
-const text = () => {
+import Textstyle from './styles';
+import type {TextTypes} from './types';
+const Text = (props: TextTypes) => {
+  const {TextMode = '', nativeProps, children, ...rest} = props;
   return (
-    <View>
-      <Text>text</Text>
-    </View>
-  )
-}
+    <>
+      {React.createElement(
+        Textstyle[TextMode || 'Text'],
+        {...nativeProps, ...rest},
+        children,
+      )}
+    </>
+  );
+};
 
-export default text
+export default Text;

@@ -1,12 +1,11 @@
-import { View, Text } from 'react-native'
-import {Vcontainer} from '@/component'
+import {Vcontainer, Text} from '@/component';
 const welcome = () => {
   return (
-    <Vcontainer alignType='center' justify='center'>
-      <Text>welcome Title</Text>
-      <Text>welcome Sub Title</Text>
+    <Vcontainer alignType="center" justify="center">
+      <Text TextMode='TextH1Title'>Welcome Title</Text>
+      <Text>Welcome Sub Title</Text>
     </Vcontainer>
-  )
-}
+  );
+};
 
-export default welcome
+export default welcome;
