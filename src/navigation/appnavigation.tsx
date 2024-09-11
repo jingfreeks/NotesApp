@@ -3,11 +3,10 @@ import bottomtab from './bottomtabnavigation';
 import {Navigation} from './constant';
 import type {AppNavigationProps, RootNavigationProps} from './types';
 import {
-  createNativeStackNavigator,
-  NativeStackScreenProps,
-} from '@react-navigation/native-stack';
+  createStackNavigator,
+} from '@react-navigation/stack';
 
-const Stack = createNativeStackNavigator<
+const Stack = createStackNavigator<
   RootNavigationProps & AppNavigationProps
 >();
 
@@ -16,7 +15,7 @@ export const Appnavigation = () => {
     <Stack.Navigator>
       <Stack.Screen
         component={bottomtab}
-        name={Navigation.bottomtab}
+        name={Navigation.Bottomtab}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

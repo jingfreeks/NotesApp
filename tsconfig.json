@@ -6,7 +6,7 @@
     "lib": ["ES2017", "DOM"],
     "module": "commonjs",
     "sourceMap": true,
-    "checkJs": true,
+    "checkJs":true,
     "moduleResolution": "node",
     "baseUrl": "./",
     "types": [
@@ -24,7 +24,7 @@
     "esModuleInterop": true,
     "useUnknownInCatchVariables": false
   },
-  "include": ["src/**/*.tsx", "tests/**/*.ts"],
+  "include": ["src/**/*.tsx", "tests/**/*.ts","./src/**/*.tsx"],
   "exclude": [
     "node_modules",
     "babel.config.js",
