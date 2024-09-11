@@ -1,8 +1,19 @@
 import styled from 'styled-components/native';
 import {Vcontainer} from '@/component';
 
-export const Container = styled(Vcontainer)`
-  flex: 1;
+export const FooterContainer = styled.View`
+  flex-direction: row;
+  padding: 15px;
 `;
 
-export const SafeAreaViewStyled = styled.SafeAreaView``;
+export const ButtonContainer = styled.View`
+  flex: 1;
+  border-width: 1px;
+  border-color:grey;
+  border-radius:10px;
+`;
+
+export const Separator = styled.View`
+  margin-left: 5px;
+  margin-right: 5px;
+`;

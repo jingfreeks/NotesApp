@@ -1,11 +1,25 @@
-import {Vcontainer, Text} from '@/component';
+import {Button, Text, Vcontainer} from '@/component';
 import {Content} from './component/content';
-import {Container} from './styles';
+import {FooterContainer, ButtonContainer,Separator} from './styles';
+import {welcomeText} from './constant'
 const welcome = () => {
   return (
-    <>
-      <Content title="Welcome" subtitle="Notes with map application" />
-    </>
+    <Vcontainer alignType="center" justify="center">
+      <Content title={welcomeText.title} subtitle={welcomeText.subTitle} />
+      <FooterContainer>
+        <ButtonContainer>
+          <Button bcolor="transparent" border={1} onPress={() => {}}>
+            <Text>Sign-Up</Text>
+          </Button>
+        </ButtonContainer>
+        <Separator />
+        <ButtonContainer>
+          <Button bcolor="transparent" border={1} onPress={() => {}}>
+            <Text>Sign-In</Text>
+          </Button>
+        </ButtonContainer>
+      </FooterContainer>
+    </Vcontainer>
   );
 };
 
