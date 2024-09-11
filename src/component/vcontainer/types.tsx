@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
+import {ReactNode} from 'react';
 
 export type VContainerProps = {
   children?: ReactNode;
   alignType?: string;
+  justify?: string;
 };

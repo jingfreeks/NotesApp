@@ -1,10 +1,11 @@
 import { View, Text } from 'react-native'
-
+import {Vcontainer} from '@/component'
 const welcome = () => {
   return (
-    <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-      <Text>welcome</Text>
-    </View>
+    <Vcontainer alignType='center' justify='center'>
+      <Text>welcome Title</Text>
+      <Text>welcome Sub Title</Text>
+    </Vcontainer>
   )
 }
 
