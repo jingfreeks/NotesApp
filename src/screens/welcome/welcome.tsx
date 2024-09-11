@@ -1,10 +1,11 @@
 import {Vcontainer, Text} from '@/component';
+import {Content} from './component/content';
+import {Container} from './styles';
 const welcome = () => {
   return (
-    <Vcontainer alignType="center" justify="center">
-      <Text TextMode='TextH1Title'>Welcome Title</Text>
-      <Text>Welcome Sub Title</Text>
-    </Vcontainer>
+    <>
+      <Content title="Welcome" subtitle="Notes with map application" />
+    </>
   );
 };
 
