@@ -8,8 +8,8 @@ export const useSignupHooks = () => {
   const dispatch=useAppDispatch()
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   const handleLogin = () => {
-    // dispatch(setCredentials({accessToken:'test'}))
-    navigation.navigate('Otp')
+    dispatch(setCredentials({accessToken:'test'}))
+    // navigation.navigate('Otp')
   };
   return {
     handleLogin,

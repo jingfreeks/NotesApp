@@ -1,11 +1,37 @@
-import { View, Text } from 'react-native'
+import React from 'react'
+import {
+  Platform,
+  TouchableWithoutFeedback,
+  Keyboard,
+  
+} from 'react-native';
 
-const notes = () => {
+import {verticalScale} from 'react-native-size-matters';
+import {
+  ContainerStyled,
+  KeyboardContainerStyled,
+  ButtonContainer,
+} from './styles';
+import {Form, Header} from './component';
+
+const Notes = () => {
   return (
-    <View>
-      <Text>notes</Text>
-    </View>
+    <KeyboardContainerStyled
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={verticalScale(100)}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <ContainerStyled>
+          <Header />
+          <Form />
+          {/* <ButtonContainer>
+            <Button bcolor="transparent" border={1} onPress={() => {}}>
+              <Text TextMode='Title'>Save</Text>
+            </Button>
+          </ButtonContainer> */}
+        </ContainerStyled>
+      </TouchableWithoutFeedback>
+    </KeyboardContainerStyled>
   )
 }
 
-export default notes
+export default Notes

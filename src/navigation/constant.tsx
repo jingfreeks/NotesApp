@@ -8,6 +8,7 @@ export const Navigation:{
   Login:string;
   Map:string;
   Otp:string;
+  Notes:string;
 } = {
   Home: 'Home',
   Welcome: 'Welcome',
@@ -17,6 +18,7 @@ export const Navigation:{
   Bottomtab:'Bottomtab',
   Login:'Login',
   Map:'Map',
-  Otp:'Otp'
+  Otp:'Otp',
+  Notes:'Notes',
 };
 
