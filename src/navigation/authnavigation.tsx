@@ -24,7 +24,7 @@ export const AuthNavigation = () => {
             fontWeight: 'bold',
           },
           headerShown: true,
-          title: 'SIGN IN',
+          title: 'Login',
         }}
       />
       <Stack.Screen

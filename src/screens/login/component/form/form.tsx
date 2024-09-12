@@ -1,49 +1,62 @@
-import React from 'react'
-import {View, Text} from 'react-native';
-import {Button, Vcontainer,FormTextController} from '@/component';
+import React from 'react';
+import {FormTextController} from '@/component';
 import {
   ContainerStyled,
   ScrollViewContainer,
   TextInputContainerStyled,
+  ButtonContainer,
 } from './styles';
-import {
-  useForm,
-  Controller,
-  useFormContext,
-  FormProvider,
-  SubmitHandler,
-} from 'react-hook-form';
+import {useForm, FormProvider} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import {StackNavigationProp} from '@react-navigation/stack';
-import type {RootNavigationProps} from '@/navigation/types';
-import {useNavigation} from '@react-navigation/native';
+import {Button, Text} from '@/component';
 import {Schema} from './schema';
+import {useSignupHooks} from '../../hooks'
 import * as yup from 'yup';
 
 const form = () => {
-  const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      phoneno: '',
+      email: '',
+      password: '',
     },
     resolver: yupResolver(Schema),
   });
+  const {signInWithPhoneNumber} = useSignupHooks();
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
         <ScrollViewContainer>
           <TextInputContainerStyled>
-          <FormTextController
-              Label="Phone no"
-              name="phoneno"
-              placeholder="Phone no"
+            <FormTextController
+              Label="Email"
+              name="email"
+              placeholder="Email"
+              rules={{
+                required: true,
+              }}
+            />
+          </TextInputContainerStyled>
+          <TextInputContainerStyled>
+            <FormTextController
+              Label="Password"
+              name="password"
+              type="password"
+              placeholder="Password"
               rules={{
                 required: true,
               }}
             />
           </TextInputContainerStyled>
         </ScrollViewContainer>
+        <ButtonContainer>
+          <Button
+            bcolor="transparent"
+            border={1}
+            onPress={formMethod.handleSubmit(signInWithPhoneNumber)}>
+            <Text>Login</Text>
+          </Button>
+        </ButtonContainer>
       </FormProvider>
     </ContainerStyled>
   );
