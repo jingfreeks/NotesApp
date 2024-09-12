@@ -22,7 +22,7 @@ const form = () => {
     },
     resolver: yupResolver(Schema),
   });
-  const {signInWithPhoneNumber} = useSignupHooks();
+  const {handleSignIn} = useSignupHooks();
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
@@ -53,7 +53,7 @@ const form = () => {
           <Button
             bcolor="transparent"
             border={1}
-            onPress={formMethod.handleSubmit(signInWithPhoneNumber)}>
+            onPress={formMethod.handleSubmit(handleSignIn)}>
             <Text>Login</Text>
           </Button>
         </ButtonContainer>
