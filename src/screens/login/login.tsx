@@ -11,7 +11,7 @@ import {Form, Header} from './component';
 import {useSignupHooks} from './hooks';
 
 const Login = () => {
-  const {signInWithPhoneNumber} = useSignupHooks();
+
   const [phoneNo,setPhoneNo]=useState('+639912141979')
   return (
     <KeyboardContainerStyled
@@ -21,11 +21,11 @@ const Login = () => {
         <ContainerStyled>
           <Header />
           <Form />
-          <ButtonContainer>
+          {/* <ButtonContainer>
             <Button bcolor="transparent" border={1} onPress={()=>signInWithPhoneNumber(phoneNo)}>
               <Text>Login</Text>
             </Button>
-          </ButtonContainer>
+          </ButtonContainer> */}
         </ContainerStyled>
       </TouchableWithoutFeedback>
     </KeyboardContainerStyled>
