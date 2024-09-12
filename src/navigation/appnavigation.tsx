@@ -1,14 +1,11 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
 import {Navigation} from './constant';
+import {Notes} from '@/screens';
 import type {AppNavigationProps, RootNavigationProps} from './types';
-import {
-  createStackNavigator,
-} from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const Stack = createStackNavigator<
-  RootNavigationProps & AppNavigationProps
->();
+const Stack = createStackNavigator<RootNavigationProps & AppNavigationProps>();
 
 export const Appnavigation = () => {
   return (
@@ -16,6 +13,11 @@ export const Appnavigation = () => {
       <Stack.Screen
         component={bottomtab}
         name={Navigation.Bottomtab}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        component={Notes}
+        name={Navigation.Notes}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

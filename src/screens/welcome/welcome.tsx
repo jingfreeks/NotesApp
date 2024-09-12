@@ -4,7 +4,7 @@ import {Content} from './component/content';
 import {FooterContainer, ButtonContainer,Separator} from './styles';
 import {welcomeText} from './constant'
 import {useWelcomeHooks} from './hooks'
-const welcome = () => {
+const Welcome = () => {
 
   const {handleSignup,handleLogin}=useWelcomeHooks()
   return (
@@ -27,4 +27,4 @@ const welcome = () => {
   );
 };
 
-export default welcome;
+export default Welcome;
