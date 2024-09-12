@@ -7,7 +7,7 @@ import {ContainerStyled} from './styles'
 const header = () => {
   return (
     <ContainerStyled>
-      <Text TextMode="TextH1Title">SIGN UP FORM</Text>
+      <Text TextMode="TextH1Title">LOG IN</Text>
     </ContainerStyled>
   )
 }

@@ -10,3 +10,9 @@ export const ScrollViewContainer = styled.ScrollView`
 export const TextInputContainerStyled = styled.View`
   padding: 10px;
 `;
+
+export const ButtonContainer = styled.View`
+  border-width: 1px;
+  border-color:grey;
+  border-radius:10px;
+`;

@@ -19,7 +19,7 @@ const Welcome = () => {
         <Separator />
         <ButtonContainer>
           <Button bcolor="transparent" border={1} onPress={handleLogin}>
-            <Text>Sign-In</Text>
+            <Text>Log-In</Text>
           </Button>
         </ButtonContainer>
       </FooterContainer>

@@ -34,6 +34,11 @@ jest.mock('@react-navigation/bottom-tabs', () => {
   };
 });
 
+jest.mock('@react-native-firebase/auth', () => ({
+  GoogleAuthProvider: {
+    credential: jest.fn().mockReturnValue('123'),
+  },
+}));
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 jest.useFakeTimers();
 

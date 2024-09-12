@@ -72,7 +72,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
           ]
         }
       >
-        SIGN UP FORM
+        LOG IN
       </Text>
     </View>
     <View
@@ -125,7 +125,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                   ]
                 }
               >
-                Email
+                Phone no
               </Text>
               <View
                 style={
@@ -140,7 +140,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                   autoCapitalize="none"
                   onBlur={[Function]}
                   onChangeText={[Function]}
-                  placeholder="Email"
+                  placeholder="Phone no"
                   secureTextEntry={false}
                   style={
                     [

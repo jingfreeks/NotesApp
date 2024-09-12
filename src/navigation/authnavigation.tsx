@@ -1,5 +1,5 @@
 import React from 'react';
-import {Login, Welcome, Signup, Otp} from '@/screens';
+import {Login, Welcome, Signup} from '@/screens';
 import {colors} from '@/utils/themes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Navigation} from './constant';
@@ -34,19 +34,6 @@ export const AuthNavigation = () => {
           headerBackTitleVisible: false,
           headerShown: true,
           title: 'SIGN UP',
-          headerTintColor: colors.blue,
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-      <Stack.Screen
-        component={Otp}
-        name={Navigation.Otp}
-        options={{
-          headerBackTitleVisible: false,
-          headerShown: true,
-          title: 'OTP',
           headerTintColor: colors.blue,
           headerTitleStyle: {
             fontWeight: 'bold',
