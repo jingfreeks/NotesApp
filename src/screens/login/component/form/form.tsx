@@ -25,9 +25,7 @@ const form = () => {
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      email: '',
-      password: '',
-      cpassword: '',
+      phoneno: '',
     },
     resolver: yupResolver(Schema),
   });
@@ -37,9 +35,9 @@ const form = () => {
         <ScrollViewContainer>
           <TextInputContainerStyled>
           <FormTextController
-              Label="Email"
-              name="email"
-              placeholder="Email"
+              Label="Phone no"
+              name="phoneno"
+              placeholder="Phone no"
               rules={{
                 required: true,
               }}

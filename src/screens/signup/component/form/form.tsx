@@ -1,10 +1,11 @@
-import React from 'react'
-import {View, Text} from 'react-native';
-import {Button, Vcontainer,FormTextController} from '@/component';
+import React from 'react';
+
+import {Button, Vcontainer, Text, FormTextController} from '@/component';
 import {
   ContainerStyled,
   ScrollViewContainer,
   TextInputContainerStyled,
+  ButtonContainer,
 } from './styles';
 import {
   useForm,
@@ -18,6 +19,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
 import {Schema} from './schema';
+import {useSignupHooks} from '../../hooks';
 import * as yup from 'yup';
 
 const form = () => {
@@ -31,12 +33,14 @@ const form = () => {
     },
     resolver: yupResolver(Schema),
   });
+
+  const {handleSignup} = useSignupHooks();
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
         <ScrollViewContainer>
           <TextInputContainerStyled>
-          <FormTextController
+            <FormTextController
               Label="Email"
               name="email"
               placeholder="Email"
@@ -45,7 +49,37 @@ const form = () => {
               }}
             />
           </TextInputContainerStyled>
+          <TextInputContainerStyled>
+            <FormTextController
+              Label="Password"
+              name="password"
+              type="password"
+              placeholder="Password"
+              rules={{
+                required: true,
+              }}
+            />
+          </TextInputContainerStyled>
+          <TextInputContainerStyled>
+            <FormTextController
+              Label="Confirm Password"
+              name="cpassword"
+              type="password"
+              placeholder="Confirm Password"
+              rules={{
+                required: true,
+              }}
+            />
+          </TextInputContainerStyled>
         </ScrollViewContainer>
+        <ButtonContainer>
+          <Button
+            bcolor="transparent"
+            border={1}
+            onPress={formMethod.handleSubmit(handleSignup)}>
+            <Text>Register</Text>
+          </Button>
+        </ButtonContainer>
       </FormProvider>
     </ContainerStyled>
   );

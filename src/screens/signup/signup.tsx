@@ -13,7 +13,7 @@ import {
   ButtonContainer,
 } from './styles';
 import {Form, Header} from './component';
-import {useSignupHooks} from './hooks'
+
 
 const Signup = () => {
   return (
@@ -24,11 +24,6 @@ const Signup = () => {
         <ContainerStyled>
           <Header />
           <Form />
-          <ButtonContainer>
-            <Button bcolor="transparent" border={1} onPress={() => {}}>
-              <Text>Register</Text>
-            </Button>
-          </ButtonContainer>
         </ContainerStyled>
       </TouchableWithoutFeedback>
     </KeyboardContainerStyled>

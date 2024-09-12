@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import {Platform, TouchableWithoutFeedback, Keyboard, Text} from 'react-native';
 import {Button} from '@/component';
 import {verticalScale} from 'react-native-size-matters';
@@ -11,7 +11,8 @@ import {Form, Header} from './component';
 import {useSignupHooks} from './hooks';
 
 const Login = () => {
-  const {handleLogin}=useSignupHooks()
+  const {signInWithPhoneNumber} = useSignupHooks();
+  const [phoneNo,setPhoneNo]=useState('+639912141979')
   return (
     <KeyboardContainerStyled
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -21,7 +22,7 @@ const Login = () => {
           <Header />
           <Form />
           <ButtonContainer>
-            <Button bcolor="transparent" border={1} onPress={handleLogin}>
+            <Button bcolor="transparent" border={1} onPress={()=>signInWithPhoneNumber(phoneNo)}>
               <Text>Login</Text>
             </Button>
           </ButtonContainer>

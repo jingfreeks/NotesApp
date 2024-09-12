@@ -7,7 +7,7 @@ export type RootNavigationProps = {
   Auth: undefined;
   Home:undefined;
   Map:undefined;
-  Otp:undefined;
+  Otp:any;
   Notes:undefined;
 };
 

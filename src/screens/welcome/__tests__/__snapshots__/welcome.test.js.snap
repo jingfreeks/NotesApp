@@ -206,7 +206,7 @@ exports[`Welcome Screen Should work as expected to get snapshot 1`] = `
             ]
           }
         >
-          Sign-In
+          Log-In
         </Text>
       </View>
     </View>
