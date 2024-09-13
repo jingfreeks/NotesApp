@@ -23,8 +23,16 @@ export const notesApiSlice = apiSlice.injectEndpoints({
             ...result.ids.map((id:string | number) => ({ type: 'Notes', id }))
         ]: ['Notes']
     }),
+    addNotes: builder.mutation({
+      query: credentials => ({
+        url: '/notes',
+        method: 'POST',
+        body: {...credentials},
+      }),
+      invalidatesTags:['Notes'] as any
+    }),
   }),
   overrideExisting: true,
 });
 
-export const {useGetNotesQuery} = notesApiSlice;
+export const {useGetNotesQuery,useAddNotesMutation} = notesApiSlice;
