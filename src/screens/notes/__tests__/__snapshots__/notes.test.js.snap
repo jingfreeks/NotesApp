@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup Screen Should work as expected to get snapshot 1`] = `
+exports[`Notes Screen Should work as expected to get snapshot 1`] = `
 <View
   onLayout={[Function]}
   style={

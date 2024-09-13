@@ -153,7 +153,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                       },
                     ]
                   }
-                  value=""
+                  value="lyndell.dobluis@gmail.com"
                 />
                 <Text
                   allowFontScaling={false}
@@ -253,7 +253,7 @@ exports[`Login Screen Should work as expected to get snapshot 1`] = `
                       },
                     ]
                   }
-                  value=""
+                  value="Jingfreeks99"
                 />
                 <Text
                   allowFontScaling={false}

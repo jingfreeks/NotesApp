@@ -11,9 +11,10 @@ import {
   CardActionContainerStyled,
   TitleTextStyled,
 } from './styles';
-
+import {UseHomeHooks} from '../../hooks'
 const listitem = (props: listItem) => {
-  const {title, body, date} = props?.item;
+  const {title, body, date,_id} = props?.item;
+  const {navigation,handleDeleteNote}=UseHomeHooks()
   return (
     <ContainerStyled>
       <Card>
@@ -26,10 +27,10 @@ const listitem = (props: listItem) => {
             <Text>{date}</Text>
           </CardContentStyled>
           <CardActionContainerStyled>
-            <Button bcolor="transparent" border={0} onPress={() => {}}>
+            <Button bcolor="transparent" border={0} onPress={() => navigation.navigate('Notes',props?.item)}>
               <FontAwesome color={colors.gray} name={'pencil'} size={25} />
             </Button>
-            <Button bcolor="transparent" border={1} onPress={() => {}}>
+            <Button bcolor="transparent" border={1} onPress={() => handleDeleteNote(_id)}>
               <FontAwesome color={colors.gray} name={'trash-o'} size={25} />
             </Button>
           </CardActionContainerStyled>

@@ -3,7 +3,6 @@ import {View, FlatList} from 'react-native';
 import {FAB} from 'react-native-elements';
 import {List} from './component';
 import {Text} from '@/component';
-import {NotesList} from './constant';
 import {UseHomeHooks} from './hooks';
 
 const Home = () => {

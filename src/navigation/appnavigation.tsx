@@ -18,7 +18,14 @@ export const Appnavigation = () => {
       <Stack.Screen
         component={Notes}
         name={Navigation.Notes}
-        options={{headerShown: false}}
+        options={{
+          headerBackTitleVisible: false,
+          headerShown: true,
+          title: 'Notes Form',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
       />
     </Stack.Navigator>
   );
