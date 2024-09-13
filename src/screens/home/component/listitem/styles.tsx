@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const ContainerStyled = styled.View`
   padding: 5px;
+  flex:1;
 `;
 
 export const CardContentStyled = styled.View`

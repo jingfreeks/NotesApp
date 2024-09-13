@@ -8,6 +8,7 @@ const baseQuery = fetchBaseQuery({
   credentials: 'include',
   prepareHeaders: (headers, {getState}: any) => {
     const token = getState().auth.token;
+
     if (token) {
       headers.set('authorization', `Bearer ${token}`);
     }
@@ -39,5 +40,5 @@ export const apiSlice = createApi<any, any>({
   baseQuery: baseQueryWithAuth,
   reducerPath: 'api',
   endpoints: builder => ({}),
-  tagTypes: ['City', 'Jobs', 'MyJobs', 'JobDetails', 'Profile'] as any,
+  tagTypes: ['Notes', 'Jobs', 'MyJobs', 'JobDetails', 'Profile'] as any,
 });

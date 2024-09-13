@@ -1,5 +1,3 @@
 export type listItem = {
-  title: string;
-  body: string;
-  date: string;
+  item: {title: string; body: string; date: string};
 };
