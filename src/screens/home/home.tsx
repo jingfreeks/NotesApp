@@ -23,8 +23,6 @@ const Home = () => {
   if (isLoading) {
     return <Loading />;
   }
-  console.log('notes', isSuccess, isLoading);
-  if (isSuccess) {
     return (
       <View
         style={{
@@ -49,7 +47,6 @@ const Home = () => {
         />
       </View>
     );
-  }
 };
 
 export default Home;
