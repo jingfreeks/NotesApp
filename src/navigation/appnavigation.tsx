@@ -1,7 +1,7 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
 import {Navigation} from './constant';
-import {Notes} from '@/screens';
+import {Notes, NotesMap} from '@/screens';
 import type {AppNavigationProps, RootNavigationProps} from './types';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -22,6 +22,18 @@ export const Appnavigation = () => {
           headerBackTitleVisible: false,
           headerShown: true,
           title: 'Notes Form',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <Stack.Screen
+        component={NotesMap}
+        name={Navigation.NotesMap}
+        options={{
+          headerBackTitleVisible: false,
+          headerShown: true,
+          title: 'Notes Map',
           headerTitleStyle: {
             fontWeight: 'bold',
           },

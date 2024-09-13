@@ -9,6 +9,7 @@ export type RootNavigationProps = {
   Map: undefined;
   Otp: any;
   Notes?: {title: string; body: string; date: string};
+  NotesMap?: {title: string; body: string; date: string};
 };
 
 export type AppNavigationProps = {
