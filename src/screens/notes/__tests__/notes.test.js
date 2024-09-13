@@ -1,11 +1,11 @@
 import React from 'react';
-import {render} from '@testing-library/react-native';
+import { renderWithProviders } from "../../../utils/testframework";
 import NotesScreen from '../notes';
 
 
-describe('Signup Screen', () => {
+describe('Notes Screen', () => {
   it('Should work as expected to get snapshot', () => {
-    const all = render(<NotesScreen />);
+    const all = renderWithProviders(<NotesScreen />);
     expect(all.toJSON()).toMatchSnapshot();
   });
 });

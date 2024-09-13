@@ -18,18 +18,25 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
-import {useAddNotesMutation} from '@/slice/notes';
+import {useAddNotesMutation, useUpdateNotesMutation} from '@/slice/notes';
 import {Schema} from './schema';
 import * as yup from 'yup';
 
-const form = () => {
+const form = (props: {
+  title: string;
+  body: string;
+  date: string;
+  id: string;
+}) => {
   const navigation = useNavigation<StackNavigationProp<RootNavigationProps>>();
+  const {title, body, id} = props;
   const [addNotes, {isLoading}] = useAddNotesMutation();
+  const [updateNotes, {isLoading: updateloading}] = useUpdateNotesMutation();
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      title: '',
-      description: '',
+      title: title || '',
+      description: body || '',
     },
     resolver: yupResolver(Schema),
   });
@@ -37,18 +44,30 @@ const form = () => {
   const onSubmit: SubmitHandler<FormData> = async data => {
     // console.log('test')
     try {
-      const userData: any = await addNotes({
-        title: data.title,
-        body: data.description,
-        lat: '7.190708',
-        long: '125.455338',
-      }).unwrap();
+      if (id) {
+        await updateNotes({
+          title: data.title,
+          body: data.description,
+          lat: '7.190708',
+          long: '125.455338',
+           id,
+        }).unwrap();
+      } else {
+        await addNotes({
+          title: data.title,
+          body: data.description,
+          lat: '7.190708',
+          long: '125.455338',
+        }).unwrap();
+      }
+
       navigation.goBack();
       // dispatch(setCredentials({...userData}));
     } catch (error) {
-      console.log('error',error);
+      console.log('error', error);
     }
   };
+  console.log('_id', id);
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>

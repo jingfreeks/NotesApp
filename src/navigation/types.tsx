@@ -5,14 +5,13 @@ export type RootNavigationProps = {
   Signup: undefined;
   Welcome: undefined;
   Auth: undefined;
-  Home:undefined;
-  Map:undefined;
-  Otp:any;
-  Notes:undefined;
+  Home: undefined;
+  Map: undefined;
+  Otp: any;
+  Notes?: {title: string; body: string; date: string};
 };
 
-
 export type AppNavigationProps = {
-  Home:string;
-  Maps:string;
+  Home: string;
+  Maps: string;
 };

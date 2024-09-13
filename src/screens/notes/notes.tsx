@@ -15,7 +15,9 @@ import {
 import {Form, Header} from './component';
 
 
-const Notes = () => {
+const Notes = (props:any) => {
+  const {route}=props;
+  const {body,title,date,_id}=route?.params || {}
   return (
     <KeyboardContainerStyled
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -23,12 +25,7 @@ const Notes = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ContainerStyled>
           <Header />
-          <Form />
-          {/* <ButtonContainer>
-            <Button bcolor="transparent" border={1} onPress={() => {}}>
-              <Text TextMode='Title'>Save</Text>
-            </Button>
-          </ButtonContainer> */}
+          <Form body={body} title={title} date={date} id={_id}/>
         </ContainerStyled>
       </TouchableWithoutFeedback>
     </KeyboardContainerStyled>
