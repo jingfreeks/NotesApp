@@ -1,5 +1,6 @@
 import React from 'react';
 import bottomtab from './bottomtabnavigation';
+import {DrawerNavigation} from './drawernavigation';
 import {Navigation} from './constant';
 import {Notes, NotesMap} from '@/screens';
 import type {AppNavigationProps, RootNavigationProps} from './types';
@@ -11,8 +12,8 @@ export const Appnavigation = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        component={bottomtab}
-        name={Navigation.Bottomtab}
+        component={DrawerNavigation}
+        name={Navigation.Drawer}
         options={{headerShown: false}}
       />
       <Stack.Screen

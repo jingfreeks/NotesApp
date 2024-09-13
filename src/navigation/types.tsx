@@ -10,6 +10,7 @@ export type RootNavigationProps = {
   Otp: any;
   Notes?: {title: string; body: string; date: string};
   NotesMap?: {title: string; body: string; date: string};
+  DrawerNavigation:{Home:string}
 };
 
 export type AppNavigationProps = {
