@@ -6,21 +6,6 @@ import {List} from './component';
 import {maps} from './constant';
 const Maps = () => {
   const {notes} = UseHomeHooks();
-  const getMarkers = () => {
-    return maps.map((item: any, idx: number) => {
-      return (
-        <Marker
-          key={item.title + idx}
-          coordinate={{
-            latitude: parseInt(item?.lat),
-            longitude: parseInt(item?.long),
-          }}
-          title={item?.title}
-          description={item?.body}
-        />
-      );
-    });
-  };
   return (
     <View style={styles.container}>
       <MapView
@@ -32,8 +17,6 @@ const Maps = () => {
           );
         })}
 
-
-        {getMarkers()}
       </MapView>
     </View>
   );

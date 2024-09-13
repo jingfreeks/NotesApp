@@ -9,6 +9,7 @@ export const Navigation:{
   Map:string;
   Otp:string;
   Notes:string;
+  NotesMap:string;
 } = {
   Home: 'Home',
   Welcome: 'Welcome',
@@ -20,5 +21,6 @@ export const Navigation:{
   Map:'Map',
   Otp:'Otp',
   Notes:'Notes',
+  NotesMap:'NotesMap'
 };
 

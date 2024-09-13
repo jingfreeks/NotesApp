@@ -1,0 +1,1 @@
+export {default as NotesMap} from './notemap'
