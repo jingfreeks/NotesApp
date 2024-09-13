@@ -13,7 +13,7 @@ import {
 } from './styles';
 
 const listitem = (props: listItem) => {
-  const {title, body, date} = props;
+  const {title, body, date} = props?.item;
   return (
     <ContainerStyled>
       <Card>

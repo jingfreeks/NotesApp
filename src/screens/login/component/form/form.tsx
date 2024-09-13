@@ -17,8 +17,8 @@ const form = () => {
   type FormData = yup.InferType<typeof Schema>;
   const formMethod = useForm<FormData>({
     defaultValues: {
-      email: '',
-      password: '',
+      email: __DEV__ ? 'lyndell.dobluis@gmail.com' : '',
+      password: __DEV__ ? 'Jingfreeks99' :'',
     },
     resolver: yupResolver(Schema),
   });
