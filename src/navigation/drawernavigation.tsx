@@ -1,6 +1,7 @@
-import React from 'react'
-import {Home} from '@/screens';
+import React from 'react';
 import type {AppNavigationProps, RootNavigationProps} from './types';
+import {setCredentials} from '@/slice/auth';
+import {useAppDispatch} from '@/config/hooks';
 import bottomtab from './bottomtabnavigation';
 import {
   createDrawerNavigator,
@@ -13,6 +14,11 @@ const Drawer = createDrawerNavigator<
   RootNavigationProps & AppNavigationProps
 >();
 export const DrawerNavigation = () => {
+  const dispatch = useAppDispatch();
+
+  const handleSignout = () => {
+    dispatch(setCredentials({user: null, accessToken: null, userId: null}));
+  };
   return (
     <Drawer.Navigator
       initialRouteName="Home"
@@ -20,7 +26,7 @@ export const DrawerNavigation = () => {
         return (
           <DrawerContentScrollView {...props}>
             <DrawerItemList {...props} />
-            <DrawerItem label="Sign-out" onPress={() => console.log('test')} />
+            <DrawerItem label="Sign-out" onPress={() => handleSignout()} />
           </DrawerContentScrollView>
         );
       }}>
