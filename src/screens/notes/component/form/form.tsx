@@ -67,7 +67,6 @@ const form = (props: {
       console.log('error', error);
     }
   };
-  console.log('_id', id);
   return (
     <ContainerStyled>
       <FormProvider {...formMethod}>
