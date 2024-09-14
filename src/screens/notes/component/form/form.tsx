@@ -44,13 +44,10 @@ const form = (props: {
 
   const [geoInfo,setGeoInfo]=useState<any>()
 
-  console.log('geoInfo',geoInfo?.coords)
-
   useEffect(()=>{
     Geolocation.getCurrentPosition((info:any) => setGeoInfo(info));
   },[])
   const onSubmit: SubmitHandler<FormData> = async data => {
-    // console.log('test')
     try {
       if (id) {
         await updateNotes({
