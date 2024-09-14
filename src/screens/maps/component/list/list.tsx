@@ -11,7 +11,6 @@ const List = (props:{item:string}) => {
       notes: data?.entities[item],
     }),
   });
-  console.log('notesss',notes)
   return (
     <Markitem data={notes} />
   )
