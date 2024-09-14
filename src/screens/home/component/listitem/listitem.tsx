@@ -14,7 +14,7 @@ import {
 } from './styles';
 import {UseHomeHooks} from '../../hooks';
 const listitem = (props: listItem) => {
-  const {title, body, date, _id} = props?.item;
+  const {title, body, date, _id} = props?.item || {};
   const {navigation, handleDeleteNote} = UseHomeHooks();
   return (
     <ContainerStyled>
