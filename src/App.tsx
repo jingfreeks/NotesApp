@@ -12,11 +12,6 @@ import {Provider} from 'react-redux';
 import {store,setupStore, AppStore,persiststore} from './config/store';
 
 function App(): React.JSX.Element {
-  const storeRef = useRef<AppStore>();
-  if (!storeRef.current) {
-    // Create the store instance the first time this renders
-    storeRef.current = setupStore();
-  }
   return (
     <StrictMode>
       <Provider store={store}>
