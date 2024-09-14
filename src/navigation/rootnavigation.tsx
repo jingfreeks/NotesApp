@@ -17,6 +17,7 @@ const Stack = createNativeStackNavigator<AppNavigationProps&RootNavigationProps>
 const RootNavigationScreen = () => {
   const navigationRef = useNavigationContainerRef<AppNavigationProps&RootNavigationProps>();
   const token = useSelector((state: State) => state.auth.token);
+  console.log('token',token)
   return (
     <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
