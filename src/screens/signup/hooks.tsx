@@ -21,7 +21,6 @@ export const useSignupHooks = () => {
       }).unwrap();
       navigation.navigate('Login')
     }catch(error){
-      console.log('error',error)
       alert(error.message)
     }
   };

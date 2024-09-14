@@ -148,7 +148,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                         "flexBasis": 0,
                         "flexGrow": 1,
                         "flexShrink": 1,
-                        "height": 30,
+                        "height": 35,
                         "marginBottom": 5,
                       },
                     ]
@@ -248,7 +248,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                         "flexBasis": 0,
                         "flexGrow": 1,
                         "flexShrink": 1,
-                        "height": 30,
+                        "height": 35,
                         "marginBottom": 5,
                       },
                     ]
@@ -349,7 +349,7 @@ exports[`Signup Screen Should work as expected to get snapshot 1`] = `
                         "flexBasis": 0,
                         "flexGrow": 1,
                         "flexShrink": 1,
-                        "height": 30,
+                        "height": 35,
                         "marginBottom": 5,
                       },
                     ]

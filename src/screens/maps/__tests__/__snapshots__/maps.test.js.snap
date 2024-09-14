@@ -1,9 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Maps Screen Should work as expected to get snapshot 1`] = `
-<View>
-  <Text>
-    maps
-  </Text>
+<View
+  style={
+    {
+      "alignItems": "center",
+      "bottom": 0,
+      "height": "100%",
+      "justifyContent": "flex-end",
+      "left": 0,
+      "position": "absolute",
+      "right": 0,
+      "top": 0,
+      "width": 400,
+    }
+  }
+>
+  <AIRMap
+    initialRegion={null}
+    onChange={[Function]}
+    onMapReady={[Function]}
+    region={null}
+    style={
+      {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
 </View>
 `;

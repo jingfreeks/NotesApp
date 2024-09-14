@@ -21,11 +21,6 @@ const Login = () => {
         <ContainerStyled>
           <Header />
           <Form />
-          {/* <ButtonContainer>
-            <Button bcolor="transparent" border={1} onPress={()=>signInWithPhoneNumber(phoneNo)}>
-              <Text>Login</Text>
-            </Button>
-          </ButtonContainer> */}
         </ContainerStyled>
       </TouchableWithoutFeedback>
     </KeyboardContainerStyled>

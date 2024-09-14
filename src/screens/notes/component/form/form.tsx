@@ -67,7 +67,6 @@ const form = (props: {
       }
 
       navigation.goBack();
-      // dispatch(setCredentials({...userData}));
     } catch (error) {
       console.log('error', error);
     }
