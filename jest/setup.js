@@ -20,7 +20,11 @@ jest.mock('@react-navigation/native-stack', () => {
     }),
   };
 });
-
+jest.mock('@react-native-community/geolocation',()=>{
+  return{
+    getCurrentPosition:jest.fn()
+  }
+})
 jest.mock('@react-navigation/stack', () => {
   return {
     createStackNavigator: () => ({
@@ -33,7 +37,11 @@ jest.mock('@react-navigation/bottom-tabs', () => {
     createBottomTabNavigator: jest.fn(),
   };
 });
-
+jest.mock('@react-navigation/drawer',()=>{
+  return {
+    createDrawerNavigator:jest.fn()
+  }
+})
 jest.mock('@react-native-firebase/auth', () => ({
   GoogleAuthProvider: {
     credential: jest.fn().mockReturnValue('123'),

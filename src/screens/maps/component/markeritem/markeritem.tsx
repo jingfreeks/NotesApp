@@ -4,7 +4,6 @@ import {Marker} from 'react-native-maps';
 import type {listItem} from './type';
 const MarkItem = (props:listItem) => {
     const {data}=props
-    console.log('data',data)
   return (
     <Marker
     key={data._id}

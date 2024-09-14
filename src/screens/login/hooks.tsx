@@ -23,7 +23,6 @@ export const useSignupHooks = () => {
       }
      
     }catch(error){
-      console.log('error',error)
       alert('Invalid Email and password')
     }
   }

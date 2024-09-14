@@ -11,7 +11,7 @@ const Maps = () => {
       <MapView
         style={styles.map}
       >
-        {notes.ids.map((item: string,idx:number) => {
+        {notes?.ids?.map((item: string,idx:number) => {
           return (
             <List key={idx} item={item}/>
           );

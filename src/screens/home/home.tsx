@@ -17,7 +17,6 @@ const Home = () => {
       </View>
     );
   }, []);
-  console.log('error',error,isLoading,isError)
   if (isLoading || isError) {
     let messages;
     if (error?.status === 403) {
