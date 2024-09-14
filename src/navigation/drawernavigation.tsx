@@ -3,6 +3,7 @@ import type {AppNavigationProps, RootNavigationProps} from './types';
 import {setCredentials} from '@/slice/auth';
 import {useAppDispatch} from '@/config/hooks';
 import bottomtab from './bottomtabnavigation';
+import {apiSlice} from '@/config/apiSlice'
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -16,8 +17,9 @@ const Drawer = createDrawerNavigator<
 export const DrawerNavigation = () => {
   const dispatch = useAppDispatch();
 
-  const handleSignout = () => {
-    dispatch(setCredentials({user: null, accessToken: null, userId: null}));
+  const handleSignout = async() => {
+    await dispatch(setCredentials({user: null, accessToken: null, userId: null}));
+    await dispatch(apiSlice.util.resetApiState())
   };
   return (
     <Drawer.Navigator

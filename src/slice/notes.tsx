@@ -2,11 +2,11 @@
 import {createEntityAdapter, EntityId} from '@reduxjs/toolkit';
 import {apiSlice} from '@/config/apiSlice';
 
-type notesType = {_id: string; title: string};
+type notesType = {_id: string; title: string;createdAt:any};
 
 export const notesAdapter = createEntityAdapter({
   selectId: (notes: notesType) => notes._id,
-  sortComparer: (a, b) => a.title.localeCompare(b.title),
+  sortComparer: (a, b) => b.createdAt - a.createdAt,
 });
 export const initialState = notesAdapter.getInitialState();
 export const notesApiSlice = apiSlice.injectEndpoints({
