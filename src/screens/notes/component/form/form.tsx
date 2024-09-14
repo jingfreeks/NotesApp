@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import {View} from 'react-native';
 import {Button, Vcontainer, FormTextController, Text} from '@/component';
 import {
@@ -19,6 +19,7 @@ import {StackNavigationProp} from '@react-navigation/stack';
 import type {RootNavigationProps} from '@/navigation/types';
 import {useNavigation} from '@react-navigation/native';
 import {useAddNotesMutation, useUpdateNotesMutation} from '@/slice/notes';
+import Geolocation from '@react-native-community/geolocation';
 import {Schema} from './schema';
 import * as yup from 'yup';
 
@@ -41,6 +42,13 @@ const form = (props: {
     resolver: yupResolver(Schema),
   });
 
+  const [geoInfo,setGeoInfo]=useState<any>()
+
+  console.log('geoInfo',geoInfo?.coords)
+
+  useEffect(()=>{
+    Geolocation.getCurrentPosition((info:any) => setGeoInfo(info));
+  },[])
   const onSubmit: SubmitHandler<FormData> = async data => {
     // console.log('test')
     try {
@@ -48,16 +56,16 @@ const form = (props: {
         await updateNotes({
           title: data.title,
           body: data.description,
-          lat: '7.190708',
-          long: '125.455338',
+          lat: geoInfo?.coords?.latitude,
+          long: geoInfo?.coords?.longitude,
            id,
         }).unwrap();
       } else {
         await addNotes({
           title: data.title,
           body: data.description,
-          lat: '7.190708',
-          long: '125.455338',
+          lat: geoInfo?.coords?.latitude,
+          long: geoInfo?.coords?.longitude,
         }).unwrap();
       }
 

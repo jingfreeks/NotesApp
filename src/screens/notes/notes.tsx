@@ -15,9 +15,11 @@ import {
 import {Form, Header} from './component';
 
 
+
 const Notes = (props:any) => {
   const {route}=props;
   const {body,title,date,_id}=route?.params || {}
+
   return (
     <KeyboardContainerStyled
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
